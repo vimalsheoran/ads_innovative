@@ -1,4 +1,5 @@
 from dotenv import load_dotenv
+from tweet_pull import get_latest_hashtags, fetch_tweets
 
 import os
 import tweepy
@@ -15,9 +16,7 @@ auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
 api = tweepy.API(auth)
 
-try:
-	api.verify_credentials()
-	print("API Authenticated.")
-except Exception as e:
-	print(e)
-	print("Error in authenticating.")
+# latest_hashtags = get_latest_hashtags(api)
+fetch_tweets(api, "#MondayMotivation")
+
+print(latest_hashtags)
