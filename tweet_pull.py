@@ -28,9 +28,10 @@ def fetch_tweets(api, hashtag):
 				'is_quote_status': tweet._json['is_quote_status'],
 				'retweet_count': tweet._json['retweet_count'],
 				'favorite_count': tweet._json['favorite_count'],
-				'possibly_sensitive': tweet._json['possibly_sensitive'],
+				'possibly_sensitive': tweet._json.get('possibly_sensitive'),
 				'language': tweet._json['lang'],
-				'id': tweet._json['id']
+				'id': tweet._json['id'],
+				'timestamp': datetime.now().strftime("%Y-%m-%d %H:%m:%s") 
 			}
 			tweet_list.append(t)
 		return tweet_list
