@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from dotenv import load_dotenv
 from pymongo import MongoClient
 
