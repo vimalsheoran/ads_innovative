@@ -1,3 +1,5 @@
 python-dotenv
 tweepy
 pymongo
+mysql-connector-python
+redis

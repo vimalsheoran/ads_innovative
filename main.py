@@ -8,8 +8,8 @@ import tweepy
 
 load_dotenv()
 
-FIFTEEN_MINUTES = 900
-FIVE_MINUTES = 300
+PER_HASHTAG_SLEEP_TIME = int(os.getenv("PER_HASHTAG_SLEEP_TIME"))
+TWITTER_POLL_SLEEP_TIME = int(os.getenv("TWITTER_POLL_SLEEP_TIME"))
 CONSUMER_SECRET = os.getenv("CONSUMER_SECRET")
 CONSUMER_KEY = os.getenv("CONSUMER_KEY")
 ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
@@ -37,6 +37,6 @@ while (True):
 		tweets = fetch_tweets(api, hashtag)
 		print("Writing tweets to the database.")
 		dbc.tweets.my_collection.insert_many(tweets)
-		print("Wait 5 minutes for retrieving tweets for the next hashtag.")
-		time.sleep(FIVE_MINUTES)
-	time.sleep(FIFTEEN_MINUTES)
+		print("Wait {} minutes for retrieving tweets for the next hashtag.".format(PER_HASHTAG_SLEEP_TIME/60))
+		time.sleep(PER_HASHTAG_SLEEP_TIME)
+	time.sleep(TWITTER_POLL_SLEEP_TIME)
