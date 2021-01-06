@@ -3,3 +3,4 @@ tweepy
 pymongo
 mysql-connector-python
 redis
+boto3
