@@ -31,7 +31,8 @@ def fetch_tweets(api, hashtag):
 				'possibly_sensitive': tweet._json.get('possibly_sensitive'),
 				'language': tweet._json['lang'],
 				'id': tweet._json['id'],
-				'timestamp': datetime.now().strftime("%Y-%m-%d %H:%m:%s") 
+				'timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+				'hashtag': hashtag
 			}
 			tweet_list.append(t)
 		return tweet_list
