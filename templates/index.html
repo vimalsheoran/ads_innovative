@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Twitter Analyzer Basic | ADS Innovative</title>
+</head>
+<body>
+	<hr>
+	<h2>Top Ten Hashtags</h2>
+	<hr>
+	<table style="margin-top: 10px; padding: 10px;">
+		<tr>
+			<th  style="padding: 5px;">Hashtag</th>
+			<th  style="padding: 5px;">Retweet Count</th>
+		</tr>
+	{% for hashtag in top_hashtags %}
+		<tr style="padding: 10px;">
+			<td  style="padding: 5px;">{{hashtag[0]}}</td>
+			<td  style="padding: 5px;">{{hashtag[1]}}</td>
+		</tr>
+	{% endfor %}
+	</table>
+
+	<hr>
+	<h2>Mobile vs Web Users</h2>
+	<hr>
+	<div>
+		<p>Precentage Mobile Users: {{mobile_v_web[0]}}%</p>
+		<p>Percentage Web Users: {{mobile_v_web[1]}}%</p>
+	</div>
+</body>
+</html>
