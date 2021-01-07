@@ -4,3 +4,4 @@ pymongo
 mysql-connector-python
 redis
 boto3
+flask
